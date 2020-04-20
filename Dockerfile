@@ -5,10 +5,13 @@ MAINTAINER bastianwiessner
 ENV R_Version=3.6.3
 ENV HOME = /root
 
+# Download R
 RUN cd $HOME && \
  wget https://cran.r-project.org/src/base/R-3/R-$R_Version.tar.gz && \
- tar -xzf R-$R_Version.tar.gz && \
- cd R-$R_Version && \
+ tar -xzf R-$R_Version.tar.gz
+
+# Navigate into dir and install interpreter
+RUN cd R-$R_Version && \
  ./configure --prefix=/opt/R/$R_Version --enable-R-shlib --with-blas --with-lapack && \
  make -j2 && \
  make check && \
