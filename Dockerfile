@@ -28,7 +28,7 @@ RUN echo "MAKEFLAGS = -j4" >> $HOME/.R/Makevars
 ## Installing R Packages
 
 RUN /opt/R/$R_Version/bin/R CMD javareconf
-# RUN /opt/R/$R_Version/bin/R -e "install.packages('shiny',dependencies=TRUE, Ncpus = getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
-# RUN /opt/R/$R_Version/bin/R -e "install.packages('tidyverse',dependencies=TRUE, Ncpus =getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
-# RUN /opt/R/$R_Version/bin/R -e "install.packages('caret',dependencies=TRUE, Ncpus =getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
-# RUN /opt/R/$R_Version/bin/R -e "install.packages('ggplot2',dependencies=TRUE, Ncpus =getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
+RUN /opt/R/$R_Version/bin/R -e "install.packages('shiny',dependencies=TRUE, Ncpus = getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
+RUN /opt/R/$R_Version/bin/R -e "install.packages('tidyverse',dependencies=TRUE, Ncpus =getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
+RUN /opt/R/$R_Version/bin/R -e "install.packages('caret',dependencies=TRUE, Ncpus =getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
+RUN /opt/R/$R_Version/bin/R -e "install.packages('ggplot2',dependencies=TRUE, Ncpus =getOption('Ncpus',2), repos='http://cran.rstudio.com/')"
