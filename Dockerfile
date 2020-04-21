@@ -3,7 +3,7 @@ FROM bastianwiessner/centos-analytics:v1
 MAINTAINER bastianwiessner
 
 ENV R_Version=3.6.3
-ENV HOME = /root
+ENV HOME=/root
 
 # Download R
 RUN cd $HOME && \
