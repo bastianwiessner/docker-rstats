@@ -11,7 +11,7 @@ RUN cd $HOME && \
  tar -xzf R-$R_Version.tar.gz
 
 # Navigate into dir and install interpreter
-RUN cd R-$R_Version && \
+RUN cd $HOME/R-$R_Version && \
  ./configure --prefix=/opt/R/$R_Version --enable-R-shlib --with-blas --with-lapack && \
  make -j2 && \
  make check && \
